@@ -44,6 +44,7 @@ body {
 #content {
 	margin: 0;
 	margin-top: 50px;
+	margin-right: 5px;
 }
 
 .blank {
@@ -89,5 +90,26 @@ body {
 
 	.card {
 		width: 94%;
+	}
+}
+
+/* If the device width is too small (under 400px) then remove the title altogether */
+@media screen and (max-width: 399px) {
+	#navbar {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	#navbar #smallTitle {
+		display: none;
+	}
+
+	#navbar a {
+		float: none;
+		display: inline-block;
+		color: rgba(255, 255, 255, 1);
+		padding: 14px 0px;
+		width: 31.75%;
+		text-align: center;
 	}
 }
