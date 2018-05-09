@@ -1,11 +1,13 @@
 function changeStylesheet(sheet) {
 	document.getElementById("pagestyle").setAttribute("href", sheet); 
+	var styling = document.getElementById("styling");
 	if (sheet == "styles/dark.css") {
-		document.getElementById("styling").innerText = "Light Theme";
-		document.getElementById("styling").setAttribute("onclick", "changeStylesheet('styles/light.css')");
+		styling.innerText = "Light Theme";
+		styling.setAttribute("onclick", "changeStylesheet('styles/light.css')");
 	}
 	else {
-		document.getElementById("styling").innerText = "Dark Theme";
-		document.getElementById("styling").setAttribute("onclick", "changeStylesheet('styles/dark.css')");
+		styling.innerText = "Dark Theme";
+		styling.setAttribute("onclick", "changeStylesheet('styles/dark.css')");
 	}
+	styling.blur();
 }
