@@ -55,7 +55,6 @@ body {
 	margin-bottom: 15px;
 	width: 80%;
 	display: inline-block;
-	max-width: 1000px;
 }
 
 .inner-card {
@@ -117,5 +116,11 @@ body {
 
 	.card {
 		width: 90%;
+	}
+}
+
+@media screen and (min-width: 2000px) {
+	.card {
+		width: 50%;
 	}
 }
