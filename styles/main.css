@@ -53,7 +53,7 @@ body {
 	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); 
 	margin: 0;
 	margin-bottom: 15px;
-	width: 80%;
+	width: 25%;
 	display: inline-block;
 }
 
@@ -66,11 +66,6 @@ body {
 	width: 100%;
 }
 
-.card h1, .card h2, .card h3 {
-	text-align: center;
-	display: block;
-}
-
 .card p {
 	margin-right: 15px;
 	margin-left: 15px;
@@ -80,35 +75,75 @@ body {
 
 .card img {
 	display: block;
-	float: left;
 	width: 45%;
 	height: 300px;
 	background: rgba(130, 130, 130, 0.5);
 	margin: 15px;
-
-}
-.card .image-right {
-	float: right;
 }
 
 .card .image-full {
-	margin: 0px;
-	width: 100%;
-	margin-bottom: 15px;
-}
-
-.card li {
-	margin-right: 15px;
-	margin-left: 15px;
-	text-align: left;
+	margin-top: 0px;
+	width: 96%;
+	margin-left: auto;
+	margin-right: auto;
+	display: inline-block;
 }
 
 p a {
 	color: rgba(0, 0, 238, 1);
 }
 
-/* If the device width is too small (under 500px) then remove the title altogether */
-@media screen and (max-width: 500px) {
+.header-bar {
+	background-color: rgba(0, 0, 0, 1);
+	width: 78%;
+	margin-left: auto;
+	margin-right: auto;
+	color: rgba(255, 255, 255, 1);
+	text-align: left;
+	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); 
+}
+
+.header-bar h2 {
+	margin-left: 1em;
+	padding: 5px;
+}
+
+.respository-info {
+	width: 100%;
+	display: inline-block;
+}
+
+.repository-info a {
+	padding: 5px;
+	text-decoration: none;
+	color: rgba(120, 120, 120, 0.8);
+}
+
+/* Media queries */
+@media screen and (max-width: 1250px) {
+	.card {
+		width: 35%;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.card {
+		width: 45%;
+	}
+
+	.header-bar {
+		width: 94%;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.card {
+		width: 90%;
+	}
+}
+
+/* If the device width is too small (under 525px) then remove the title altogether */
+@media screen and (max-width: 525px) {
 	#navbar {
 		text-align: center;
 	}
@@ -123,14 +158,14 @@ p a {
 		color: rgba(255, 255, 255, 1);
 		text-align: center;
 	}
-	
-	.card {
-		width: 90%;
-	}
 }
 
 @media screen and (min-width: 2000px) {
 	.card {
-		width: 50%;
+		width: 32%;
+	}
+
+	.header-bar {
+		width: 98%;
 	}
 }

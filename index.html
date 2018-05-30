@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Page Title</title>
+	<title>Enrique Sandoval</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
 	<link id="pagestyle" rel="stylesheet" type="text/css" media="screen" href="styles/light.css" />
@@ -11,47 +11,28 @@
 </head>
 <body>
 	<div id="navbar">
-		<a href="mailto:ee.sandoval.jr@gmail.com">Contact</a>
-		<a href="https://www.github.com/eesandoval">Github</a>
-		<a href="javascript:void(0);" id="styling" onclick="changeStylesheet('styles/dark.css')">Dark Theme</a>
-		<h3>Enrique Sandoval</h3>
+		<a class="navigation" href="about.html">About</a>
+		<a class="navigation" href="https://www.github.com/eesandoval">GitHub</a>
+		<a class="navigation" href="javascript:void(0);" id="styling" onclick="changeStylesheet('styles/dark.css')">Dark Theme</a>
+		<h3>Enrique Sandoval on GitHub</h3>
 	</div>
 	<img id="header-image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAI=" alt="Header image" title="Header image">
 	<div id="content">
-		<div class="card">
-			<h1>About Me</h1>
-			<p>
-				A 24 year old developer from the University of California, Irvine. Love to develop in my free time using a plethora of languages, frameworks, 
-				and platforms. Some of my favorite languages are listed below:
-			</p>
-			<ul>
-				<li>C++ using the Qt framework or the Visual Studio C++ framework, knowledge extends into C++11</li>
-				<li>Python 3 for small scripts such as web scrapers or one time fixes that can work on any OS</li>
-				<li>Java for mobile development on Android using Android Studio</li>
-				<li>C# for modern development including Windows WPF and Xamarin for mobile development along with Unity for simple game development</li>
-				<li>Java/CSS/HTML5 for web development, prefer to write from scratch (like this github.io) but also know of a few Javascript frameworks</li>
-				<li>Transact-SQL and PL/SQL (or plain ANSI SQL too) for writing stored procedures, functions, views, or general database querying</li>
-			</ul>
-			<p>
-				The projects listed on this github are all done in my free time from work. These are mostly done to expand my knowledge in the language/framework. 
-				Some do try and solve common issues faced by my colleagues and I that have no solution or a solution that is riddled with additional problems. 
-				Below is a list of Github projects I have worked on.
-			</p>
+		<div class="header-bar">
+			<h2>Repositories : 1 Shown</h2>
 		</div>
 		<div class="card">
-			<h1>PoPi - The Screenshot Tool</h1>
+			<h2 class="repository-name">PoPi</h2>
+			<div class="repository-info">
+				<a href="javascript:void(0);">C++</a>
+				<a href="https://www.qt.io">Qt</a>
+				<a href="https://www.gnu.org/licenses/lgpl-3.0.en.html">LGPL v3.0</a>
+			</div>
 			<p>
-				<a href="https://github.com/eesandoval/PoPi">PoPi</a> is an application designed as a screenshot tool for the GNU/Linux operating system. 
-				This application targets the X11 windowing 	system and was initially developed for KDE Plasma, 	but may work on any other X11 windowing system 
-				regardless of desktop environment. Unlike many 	other screenshot tools available on GNU/Linux, this application is designed to mimic similar 
-				functions to popular Window applications <a href="https://puush.me">puush</a> and <a href="https://getsharex.com">ShareX</a>. 
-				These applications take a screenshot, save the screenshot image locally, upload the image to an image hosting site (such as 
-				<a href="https://imgur.com">Imgur</a>), and finally copy the URL where the image was uploaded to onto the clipboard. This can all easily be 
-				done in one simple hotkey motion on Windows using the aformentioned programs. Similar functionallity could be obtained in GNU/Linux using 
-				other screenshot tools, however it was not as efficient as one simple hotkey and often involved multiple button clicks and user interfaces. 
-				PoPi is designed to be simple enough to use and provide an easy way to auto-upload 	images to share them with others. This tool was developed 
-				using <a href="https://www.qt.io">Qt 5.10</a> and is licensed under the <a href="https://www.gnu.org/licenses/lgpl-3.0.en.html">GNU Lesser General Public License v3.0</a>.
+				PoPi is an application designed as a screenshot tool for the GNU/Linux operating system under the X11 windowing system. The application
+				takes a screenshot using a hotkey, uploads the image to Imgur, and pastes the link onto the clipboard.
 			</p>
+			<img class="image-full"></img>
 		</div>
 	</div>
 </body>
