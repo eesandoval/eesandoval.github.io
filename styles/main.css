@@ -1,36 +1,62 @@
+:root {
+	--primary-color:#6200EE;
+	--primary-variant:#3700B3;
+	--primary-variant2:#BB86FC;
+	--secondary:#03DAC6;
+	--secondary-variant:#018786;
+	--placeholder-image:#808080;
+	--background:#FFFFFF;
+	--surface:#FFFFFF;
+	--error:#B00020;
+	--on-primary:#FFFFFF;
+	--on-secondary:#000000;
+	--on-background:#000000;
+	--on-surface:#000000;
+	--on-error:#FFFFFF;
+}
+
 body {
 	margin: 0;
 }
 
-#navbar {
-	margin: 0;
-	overflow: hidden;
-	background-color: rgba(0, 0, 0, 1);
+.background-navbar, #navbar {
+	background-color: var(--primary-color);
 	position: fixed;
+	overflow: hidden;
+	height: 3.5em;
 	top: 0;
+	margin: 0;
 	width: 100%;
     box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); 
 }
 
-#navbar a {
+#navbar {
+	max-width: 1500px;
+	left: 50%;
+	transform: translateX(-50%);
+	box-shadow: none;
+}
+
+.navigation {
 	float: right;
 	display: block;
-	color: rgba(255, 255, 255, 1);
-	padding: 14px 16px;
+	color: var(--on-primary);
+	font-size: 1.125em;
+	padding: 1em;
 	text-decoration: none;
 }
 
-#navbar a:hover {
-	background: rgba(150, 150, 150, 1);
-	color: rgba(0, 0, 0, 1);
+.navigation:hover {
+	background: var(--secondary);
+	color: var(--on-secondary);
 }
 
-#navbar h3 {
+#navbar h1 {
 	display: block;
 	color: rgba(255, 255, 255, 1);
 	text-align: left;
-	margin-bottom: 0px;
-	margin-top: 12.5px;
+	margin: 0px;
+	margin-top: 0.25em;
 	padding: 0px 16px;
 }
 
@@ -38,8 +64,8 @@ body {
 	display: block;
 	width: 100%;
 	height: 300px;
-	margin-top: 46px;
-	background: rgba(130, 130, 130, 0.5);
+	margin-top: 2.5em;
+	background: var(--placeholder-image);
 	box-shadow:  0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
 }
 
@@ -53,7 +79,10 @@ body {
 	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); 
 	margin: 0;
 	margin-bottom: 15px;
-	width: 25%;
+	margin-left: 15px;
+	margin-right: 15px;
+	width: 33%;
+	max-width: 333px;
 	display: inline-block;
 }
 
@@ -66,9 +95,16 @@ body {
 	width: 100%;
 }
 
+.card h1, .card h2, .card h3 {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
 .card p {
 	margin-right: 15px;
 	margin-left: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 	text-align: left;
 	display: block;
 }
@@ -77,7 +113,7 @@ body {
 	display: block;
 	width: 45%;
 	height: 300px;
-	background: rgba(130, 130, 130, 0.5);
+	background: var(--placeholder-image);
 	margin: 15px;
 }
 
@@ -89,23 +125,45 @@ body {
 	display: inline-block;
 }
 
-p a {
-	color: rgba(0, 0, 238, 1);
+.full-width {
+	width: 100%;
 }
 
 .header-bar {
-	background-color: rgba(0, 0, 0, 1);
-	width: 78%;
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	color: rgba(255, 255, 255, 1);
+	margin-bottom: 15px;
+	color: var(--on-surface);
 	text-align: left;
-	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); 
+	display: inline-block;
+	border-bottom: 1px solid black;
 }
 
 .header-bar h2 {
+	margin: 0px;
 	margin-left: 1em;
-	padding: 5px;
+	padding: 0.25em;
+	display: inline-block;
+}
+
+#navbar input {
+	float: right;
+	display: block;
+	width: 50%;
+	margin-top: 1px;
+	padding: 0.75em;
+	max-width: 250px;
+	border: 0.5px solid var(--on-surface);
+	background-color: inherit;
+	color: var(--on-primary);
+	box-sizing: border-box;
+	font-size: 1.25em;
+}
+
+::placeholder {
+	color: var(--on-primary);
+	opacity: 0.9;
 }
 
 .respository-info {
@@ -113,46 +171,67 @@ p a {
 	display: inline-block;
 }
 
-.repository-info a {
+.tag {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.tag a {
 	padding: 5px;
 	text-decoration: none;
 	color: rgba(120, 120, 120, 0.8);
 }
 
-/* Media queries */
-@media screen and (max-width: 1250px) {
-	.card {
-		width: 35%;
-	}
+.header-bar button {
+	float: right;
+	display: block;
+	padding: 0.5em;
+	border: 1px solid var(--primary-color);
+	background-color: inherit;
+	color: var(--on-surface);
+	box-sizing: border-box;
+	font-size: 1.0625em;
+	display:none;
 }
 
-@media screen and (max-width: 1000px) {
+.header-bar button:hover {
+	background: var(--secondary);
+	color: var(--on-secondary);
+}
+
+.section {
+	margin: 0;
+	margin-bottom: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 78%;
+	max-width: 1250px;
+}
+
+/* Media queries */
+@media screen and (max-width: 62.5em) {
 	.card {
 		width: 45%;
 	}
-
-	.header-bar {
-		width: 94%;
-	}
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 46.875em) {
 	.card {
 		width: 90%;
+		max-width: 1000px;
 	}
 }
 
-/* If the device width is too small (under 525px) then remove the title altogether */
-@media screen and (max-width: 525px) {
+@media screen and (max-width: 56.25em) {
 	#navbar {
 		text-align: center;
 	}
 
-	#navbar h3 {
+	#navbar h1 {
 		display: none;
 	}
 
-	#navbar a {
+	#navbar .navigation {
 		float: none;
 		display: inline-block;
 		color: rgba(255, 255, 255, 1);
@@ -160,12 +239,33 @@ p a {
 	}
 }
 
-@media screen and (min-width: 2000px) {
-	.card {
-		width: 32%;
+@media screen and (max-width: 39.8125em) {
+	.section {
+		display: inline-block;
+		width: 95%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
-	.header-bar {
-		width: 98%;
+	#navbar .disposable {
+		display:none;
+	}
+}
+
+@media screen and (max-width: 20.9375em) {
+	.search-bar h2 {
+		display: none;
+	}
+
+	.header-bar input {
+		width: 100%;
+		max-width: 100%;
+		border: none;
+	}
+}
+
+@media screen and (min-width: 125em) {
+	.card {
+		width: 32%;
 	}
 }
