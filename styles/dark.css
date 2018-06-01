@@ -1,10 +1,16 @@
-body {
-	background-color: rgba(60, 60, 60, 1);
-}
-.card {
-	background-color: rgba(90, 90, 90, 1);
-	color: rgba(220, 220, 220, 1);
-}
-p a {
-	color: rgba(160, 160, 160, 1);
+:root {
+	--primary-color:#6200EE;
+	--primary-variant:#3700B3;
+	--primary-variant2:#BB86FC;
+	--secondary:#03DAC6;
+	--secondary-variant:#018786;
+	--placeholder-image:#808080;
+	--background:#616161;
+	--surface:#616161;
+	--error:#B00020;
+	--on-primary:#FFFFFF;
+	--on-secondary:#000000;
+	--on-background:#FFFFFF;
+	--on-surface:#FFFFFF;
+	--on-error:#000000;
 }

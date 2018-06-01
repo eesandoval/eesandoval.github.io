@@ -34,19 +34,6 @@ function repositorySearch() {
 	}
 }
 
-function toggleDiv(div, button) {
-	var aboutDiv = document.getElementById(div);
-	var button = document.getElementById(button);
-	if (aboutDiv.style.display == "none") {
-		aboutDiv.style.display = "";
-		button.innerHTML = "HIDE";
-	}
-	else {
-		aboutDiv.style.display = "none";
-		button.innerHTML = "SHOW";
-	}
-}
-
 function scrollToDiv(stringDiv) {
 	document.getElementById(stringDiv).scrollIntoView();
 	var navbarHeight = document.getElementById("navbar").clientHeight;

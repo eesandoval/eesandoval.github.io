@@ -15,23 +15,22 @@
 	<div class="full-width background-navbar">
 		<div id="navbar">
 			<a class="disposable navigation" href="javascript:void(0);" id="styling" onclick="changeStylesheet('styles/dark.css')">Alter CSS</a>
-			<a class="disposable navigation" href="mailto:ee.sandoval.jr@gmail.com">Contact</a>
+			<a class="disposable navigation" href="mailto:ee.sandoval.jr@gmail.com" id="nav-contact">Contact</a>
 			<a class="navigation" href="javascript:void(0);" onclick="scrollToDiv('about-header')">About</a>
 			<a class="navigation" href="javascript:void(0);" onclick="scrollToDiv('repository-header')">Repos</a>
-			<input class="navigation" type="text" id="repository-search-bar" onkeyup="repositorySearch()" placeholder="Search Repos">
 			<h1>Enrique's GitHub</h1>
 		</div>
 	</div>
-	<img id="header-image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAI=" alt="Header image" title="Header image">
 	<div id="content">
 		<div class="section">
 			<div class="full-width">
 				<div id="repository-header" class="header-bar search-bar">
-					<h2>Repos</h2>
-					<button id="toggle-repos" onclick="toggleDiv('repo-div','toggle-repos')"></button>
+					<h2 class="search-header">Repos</h2>
+					<input type="text" id="repository-search-bar" onkeyup="repositorySearch()" placeholder="Search Repos">
+					<i class="material-icons" id="repository-search-icon">search</i>
 				</div>
 			</div>
-			<div class="full-width" id="repo-div">
+			<div class="full-width row" id="repo-div">
 				<div class="repository card">
 					<h2 class="repository-name">PoPi</h2>
 					<div class="tag repository-info">
@@ -53,7 +52,7 @@
 					<button id="toggle-about" onclick="toggleDiv('about-div', 'toggle-about')">HIDE</button>
 				</div>
 			</div>
-			<div class="full-width" id="about-div">
+			<div class="full-width row" id="about-div">
 				<div class="card">
 					<h2>Background</h2>
 					<div class="tag">

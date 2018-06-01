@@ -1,22 +1,7 @@
-:root {
-	--primary-color:#6200EE;
-	--primary-variant:#3700B3;
-	--primary-variant2:#BB86FC;
-	--secondary:#03DAC6;
-	--secondary-variant:#018786;
-	--placeholder-image:#808080;
-	--background:#FFFFFF;
-	--surface:#FFFFFF;
-	--error:#B00020;
-	--on-primary:#FFFFFF;
-	--on-secondary:#000000;
-	--on-background:#000000;
-	--on-surface:#000000;
-	--on-error:#FFFFFF;
-}
-
 body {
 	margin: 0;
+	background-color: var(--surface);
+	color: var(--on-surface);
 }
 
 .background-navbar, #navbar {
@@ -53,37 +38,25 @@ body {
 
 #navbar h1 {
 	display: block;
-	color: rgba(255, 255, 255, 1);
+	color: var(--on-primary);
 	text-align: left;
 	margin: 0px;
 	margin-top: 0.25em;
 	padding: 0px 16px;
 }
 
-#header-image {
-	display: block;
-	width: 100%;
-	height: 300px;
-	margin-top: 2.5em;
-	background: var(--placeholder-image);
-	box-shadow:  0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
-}
-
 #content {
 	margin: 0;
-	margin-top: 15px;
+	margin-top: calc(3em + 30px);
 	text-align: center;
 }
 
 .card {
 	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); 
-	margin: 0;
-	margin-bottom: 15px;
-	margin-left: 15px;
-	margin-right: 15px;
+	margin: 15px;
+	max-width: 300px;
 	width: 33%;
-	max-width: 333px;
-	display: inline-block;
+	flex-grow: 1;
 }
 
 .inner-card {
@@ -129,6 +102,16 @@ body {
 	width: 100%;
 }
 
+.row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .header-bar {
 	width: 100%;
 	margin-left: auto;
@@ -147,23 +130,37 @@ body {
 	display: inline-block;
 }
 
-#navbar input {
+#repository-search-bar {
 	float: right;
 	display: block;
 	width: 50%;
-	margin-top: 1px;
-	padding: 0.75em;
-	max-width: 250px;
-	border: 0.5px solid var(--on-surface);
+	max-width: 125px;
+	color: var(--on-surface);
 	background-color: inherit;
-	color: var(--on-primary);
-	box-sizing: border-box;
-	font-size: 1.25em;
+	outline: none;
+	border: rgba(120, 120, 120, 0.5) solid 1px;
+	border-radius: 16px;
+	padding-top: 0.8em;
+	padding-right: 16px;
+	padding-bottom: 0.8em;
+	padding-left: 16px;
+	box-sizing: inherit;
+    transition: all 0.5s ease;
+}
+
+#repository-search-bar:focus {
+	max-width: 250px;
 }
 
 ::placeholder {
-	color: var(--on-primary);
-	opacity: 0.9;
+	color: var(--on-surface);
+	opacity: 0.5;
+}
+
+#repository-search-icon {
+	display: block;
+	float: right;
+	margin-top: 8px;
 }
 
 .respository-info {
@@ -179,7 +176,12 @@ body {
 .tag a {
 	padding: 5px;
 	text-decoration: none;
-	color: rgba(120, 120, 120, 0.8);
+	color: var(--on-surface);
+	opacity: 0.4;
+}
+.tag a:hover {
+	color: var(--primary-color);
+	opacity: 1;
 }
 
 .header-bar button {
@@ -209,20 +211,32 @@ body {
 }
 
 /* Media queries */
+/* At 1000px (62.5em) 3 cards is too much, reduce to two */
 @media screen and (max-width: 62.5em) {
 	.card {
 		width: 45%;
+		max-width: 450px;
 	}
-}
 
-@media screen and (max-width: 46.875em) {
-	.card {
-		width: 90%;
+	.row {
 		max-width: 1000px;
 	}
+
+	.section {
+		width: 90%;
+	}
+
+	.image-wrapper h2 {
+		left: 48px;
+	}
+
+	.image-wrapper h3 {
+		left: 64px;
+	}
 }
 
-@media screen and (max-width: 56.25em) {
+/* At 625px (39.0625em) top nav bar's header and navigation items collide */
+@media screen and (max-width: 39.0625em) {
 	#navbar {
 		text-align: center;
 	}
@@ -234,38 +248,28 @@ body {
 	#navbar .navigation {
 		float: none;
 		display: inline-block;
-		color: rgba(255, 255, 255, 1);
+		color: var(--on-primary);
 		text-align: center;
 	}
 }
 
-@media screen and (max-width: 39.8125em) {
-	.section {
-		display: inline-block;
-		width: 95%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	#navbar .disposable {
-		display:none;
+/* At 400px (25em) top nav bar begins colliding with its navigation items */
+@media screen and (max-width: 25em) {
+	#navbar #nav-contact {
+		display: none;
 	}
 }
 
-@media screen and (max-width: 20.9375em) {
+/* At 330px (21em) search bar collides with title */
+@media screen and (max-width: 21em) {
 	.search-bar h2 {
 		display: none;
 	}
 
-	.header-bar input {
-		width: 100%;
-		max-width: 100%;
-		border: none;
-	}
-}
-
-@media screen and (min-width: 125em) {
-	.card {
-		width: 32%;
+	#repository-search-bar {
+		width: 85%;
+		max-width: 85%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
