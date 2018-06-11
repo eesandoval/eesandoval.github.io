@@ -16,20 +16,11 @@ function repositorySearch() {
 	var repositories = document.getElementsByClassName("repository");
 	for (i = 0; i < repositories.length; i++) {
 		var repositoryName = repositories[i].getElementsByClassName("repository-name")[0];
-		var repositoryInfo = repositories[i].getElementsByClassName("repository-info")[0].getElementsByTagName("a");
 		if (repositoryName.innerHTML.toUpperCase().indexOf(filter) > -1) {
 			repositories[i].style.display = "";
 		}
 		else {
-			for (var j = 0; j < repositoryInfo.length; j++) {
-				if (repositoryInfo[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
-					repositories[i].style.display = "";
-					break;
-				}
-				else {
-					repositories[i].style.display = "none";
-				}
-			}
+			repositories[i].style.display = "none";
 		}
 	}
 }

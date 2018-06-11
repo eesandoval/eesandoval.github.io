@@ -2,6 +2,7 @@ body {
 	margin: 0;
 	background-color: var(--surface);
 	color: var(--on-surface);
+	cursor: default;
 }
 
 .background-navbar, #navbar {
@@ -54,9 +55,14 @@ body {
 .card {
 	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); 
 	margin: 15px;
-	max-width: 300px;
-	width: 33%;
+	max-width: 600px;
+	width: 45%;
 	flex-grow: 1;
+	transition: 0.3s;
+}
+
+.card:hover {
+	box-shadow: 0px 4px 8px -1px rgba(0, 0, 0, 0.2), 0px 8px 10px 0px rgba(0, 0, 0, 0.14), 0px 2px 20px 0px rgba(0, 0, 0, 0.12); 
 }
 
 .inner-card {
@@ -71,6 +77,15 @@ body {
 .card h1, .card h2, .card h3 {
 	margin-top: 15px;
 	margin-bottom: 15px;
+}
+
+.repository-link {
+	text-decoration: none;
+	color: var(--on-surface);
+}
+
+.repository-link:hover {
+	color: var(--primary-color);
 }
 
 .card p {
@@ -107,7 +122,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	max-width: 1000px;
+	max-width: 1250px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -117,6 +132,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 15px;
+	margin-top: 0px;
 	color: var(--on-surface);
 	text-align: left;
 	display: inline-block;
@@ -211,30 +227,22 @@ body {
 }
 
 /* Media queries */
-/* At 1000px (62.5em) 3 cards is too much, reduce to two */
-@media screen and (max-width: 62.5em) {
-	.card {
-		width: 45%;
-		max-width: 450px;
-	}
-
+/* At 770px (48.125em) one card instead of two per row */
+@media screen and (max-width: 48.125em) {
 	.row {
-		max-width: 1000px;
+		width: 100%;
+		max-width: 100%;
 	}
-
+	.card {
+		width: 100%;
+		max-width: 100%;
+		margin-top: 7px;
+		margin-bottom: 7px;
+	}
 	.section {
-		width: 90%;
-	}
-
-	.image-wrapper h2 {
-		left: 48px;
-	}
-
-	.image-wrapper h3 {
-		left: 64px;
+		width: 95%;
 	}
 }
-
 /* At 625px (39.0625em) top nav bar's header and navigation items collide */
 @media screen and (max-width: 39.0625em) {
 	#navbar {
@@ -260,8 +268,17 @@ body {
 	}
 }
 
-/* At 330px (21em) search bar collides with title */
-@media screen and (max-width: 21em) {
+/* At 350px (21.875em) search bar collides with title */
+@media screen and (max-width: 21.875em) {
+
+	#repository-search-bar {
+		width: 35%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media screen and (max-width: 16.875em) {
 	.search-bar h2 {
 		display: none;
 	}
@@ -271,5 +288,9 @@ body {
 		max-width: 85%;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	#repository-search-icon {
+		display: none;
 	}
 }

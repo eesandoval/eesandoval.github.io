@@ -1,15 +1,15 @@
 :root {
-	--primary-color:#6200EE;
+	--primary-color:#452476;
 	--primary-variant:#3700B3;
 	--primary-variant2:#BB86FC;
-	--secondary:#03DAC6;
-	--secondary-variant:#018786;
+	--secondary:#313e8c;
+	--secondary-variant:#242d76;
 	--placeholder-image:#000000;
 	--background:#FFFFFF;
 	--surface:#FFFFFF;
 	--error:#B00020;
 	--on-primary:#FFFFFF;
-	--on-secondary:#000000;
+	--on-secondary:#FFFFFF;
 	--on-background:#000000;
 	--on-surface:#000000;
 	--on-error:#FFFFFF;
